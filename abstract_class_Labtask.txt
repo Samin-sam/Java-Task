@@ -1,0 +1,151 @@
+public abstract class Person {
+
+    private String name;
+    private int age;
+    protected String phoneNo;
+    protected String email;
+    protected boolean occupation;
+
+    public Person(String name, int agge, String phoneNo, String email, boolean occupation) {
+        this.name = name;
+        this.age = age;
+        this.phoneNo = phoneNo;
+        this.email = email;
+        this.occupation = occupation;
+
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+
+    abstract boolean hasOccupation();
+
+    abstract public void display();
+
+
+}
+
+//////////////////////////////////////////////////////////
+
+public class Student extends Person
+{
+
+    private String id;
+    private double cgpa;
+
+    public Student(String name, int age, String phoneNo, String email, boolean occupation,String id,double cgpa )
+    {
+        super(name,age,phoneNo,email,occupation);
+        this.id=id;
+        this.cgpa=cgpa;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId()
+    {
+        return  id;
+    }
+
+    public void setCgpa(double cgpa) {
+        this.cgpa = cgpa;
+    }
+
+    public double getCgpa() {
+        return cgpa;
+    }
+
+    public void display()
+    {
+
+        System.out.print("Name:"+name);
+        System.out.print("Age:"+age);
+        System.out.print("Phoneno:"+phoneNo);
+        System.out.print("Email:"+email);
+        System.out.print("id:"+id);
+        System.out.print("CGpa:"+cgpa);
+
+
+    }
+
+}
+
+/////////////////////////////////////////////
+
+public class Employee extends Person
+{
+    private String id;
+    private int salary;
+
+    public Employee(String name, int age, String phoneNo, String email, boolean occupation,String id, String salary)
+    {
+        super(name,age,phoneNo,email,occupation);
+        this.id=id;
+        this.salary=salary;
+
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+    public void display()
+    {
+
+        System.out.print("Name:"+name);
+        System.out.print("Age:"+age);
+        System.out.print("Phoneno:"+phoneNo);
+        System.out.print("Email:"+email);
+        System.out.print("id:"+id);
+        System.out.print("salary:"+salary);
+
+
+    }
+
+}
+
+///////////////////////////////
+
+public class Start
+{
+    public static void main(String[] args)
+    {
+        Person p;
+
+        p = new Student("dom",22,"0521364","defmail","12385",4.0);
+        p.display();
+        Employee E= new Employee("dom",22,"0521364","defmail","12385",4.0);
+        E.display();
+
+
+    }
+
+
+
+}
